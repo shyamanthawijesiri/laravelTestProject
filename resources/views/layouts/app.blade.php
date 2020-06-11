@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-inverse  shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -34,7 +34,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item">
-                              <a class="nav-link" href="/posts/create">Add Post</a>
+                          <a class="nav-link" href="/posts/create">Add Post</a>
                       </li>
                     </ul>
 
@@ -42,16 +42,16 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                                <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link" href="/services">Service</a>
+                            <a class="nav-link" href="/services">services</a>
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link" href="/about">About</a>
+                            <a class="nav-link" href="/posts">Blog</a>
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link" href="/posts">Blog</a>
+                            <a class="nav-link" href="/about">About</a>
                         </li>
                         @guest
                             <li class="nav-item">
@@ -85,11 +85,12 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
 
-        <main class="py-4 container">
-            @include('inc.message')
+          <main class="py-4">
             @yield('content')
-        </main>
+          </main>
+        </div>
     </div>
 </body>
 </html>

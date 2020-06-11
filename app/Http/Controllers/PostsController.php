@@ -47,6 +47,7 @@ class PostsController extends Controller
         $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        $post->user_id = auth()->user()->id;
         $post -> save();
 
         return redirect('/posts')->with('success', 'post created');
@@ -106,6 +107,8 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+          $post = Post::find($id);
+          $post->delete();
+          return redirect('/posts')->with('success','post deleted');
     }
 }
